@@ -1,0 +1,149 @@
+.travel-header,
+.travel-footer {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  z-index: 3;
+}
+
+.travel-header {
+  top: 24px;
+}
+.travel-footer {
+  bottom: 24px;
+}
+
+.travel-header strong {
+  font-size: 32px;
+  letter-spacing: -2px;
+}
+
+.travel-header span,
+.travel-footer span {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #000;
+}
+
+.travel-headline {
+  position: absolute;
+  top: 13%;
+  left: 8%;
+  margin: 0;
+  color: #f5c9b8;
+  font-size: clamp(36px, 5vw, 66px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.travel-scroll {
+  --stage-height: 650px;
+  height: var(--stage-height);
+  overflow-y: scroll;
+  border-radius: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.travel-journey {
+  height: 300%;
+
+}
+
+.travel-stage {
+  position: sticky;
+  top: 0;
+  height: var(--stage-height);
+
+  overflow: clip;
+  background: #35294d;
+  color: white;
+}
+
+.travel-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  transform: translateY(40px) rotate(-8deg) scale(0.48);
+}
+
+.destination {
+  position: absolute;
+  left: 8%;
+  bottom: 14%;
+  z-index: 2;
+  opacity: 1;
+  transform: translateY(35px);
+  text-shadow: 0 3px 20px #000;
+}
+
+.destination h3 {
+  margin: 10px 0;
+  font-size: clamp(64px, 12vw, 150px);
+  line-height: 1;
+  letter-spacing: -4px;
+}
+
+.destination p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@keyframes expand-photo {
+  from {
+    transform: translateY(40px) rotate(-8deg) scale(0.48);
+    border-radius: 24px;
+  }
+  to {
+    transform: translateY(0) rotate(0deg) scale(1);
+    border-radius: 0;
+  }
+}
+
+.travel-photo {
+  animation: expand-photo linear both;
+
+  animation-timeline: scroll();
+}
+
+@keyframes hide-headline {
+  0% {
+    opacity: 1;
+  }
+  35%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.travel-headline {
+  animation: hide-headline 1ms linear both;
+  animation-timeline: scroll();
+}
+
+@keyframes show-destination {
+  0%,
+  45% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  85%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.destination {
+  animation: show-destination 1ms linear both;
+  animation-timeline: scroll();
+}

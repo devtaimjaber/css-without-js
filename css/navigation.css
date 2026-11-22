@@ -1,0 +1,58 @@
+.reel-header {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #dce3dc;
+  background: #fff;
+  color: #233d35;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.reel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.reel-nav a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 7px;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.reel-nav a:hover,
+.reel-nav a[aria-current="page"] {
+  background: #edf3ec;
+  color: #315e3e;
+}
+
+.reel-nav a:focus-visible {
+  outline: 2px solid #477557;
+  outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+  .reel-nav {
+    gap: 4px;
+    padding: 10px 8px;
+  }
+
+  .reel-nav a {
+    padding: 8px;
+  }
+}
+
+.reel-nav .instagram-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
